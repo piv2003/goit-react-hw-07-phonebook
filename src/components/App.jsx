@@ -4,7 +4,7 @@ import Form from 'components/Form';
 import Filter from 'components/Filter';
 import ContactsList from 'components/ContactsList/ContactsList.js';
 import { AppBox, Empty } from 'components/App.styled';
-import { loadStorage, saveStorage } from '../LocalStorage/LocalStorage.js';
+import { loadStorage, saveStorage } from '../Redux/LocalStorage.js';
 
 const LOCAL_STORAGE_KEY = 'contacts';
 
