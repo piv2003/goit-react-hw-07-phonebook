@@ -11,6 +11,9 @@ export const AppBox = styled.div`
   gap: 20px;
   border-radius: 50px;
   padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.986), 5px 7px 10px,
+    rgba(0, 0, 0, 0.9) 3px -3px 10px, rgba(0, 0, 0, 0.9) 0px 4px 6px,
+    rgba(0, 0, 0, 0.9) 10px 3px 5px, rgba(0, 0, 0, 0.9) 10px -3px 2px;
   background: repeating-linear-gradient(
       190deg,
       rgba(247, 56, 56, 0.5) 40px,
@@ -66,7 +69,7 @@ export const Empty = styled.p`
   }
   @keyframes pulsate {
     50% {
-      color: #fff;
+      color: #d60bf1;
       text-shadow: 0 -1px rgba(0, 0, 0, 0.3), 0 0 5px #ffd, 0 0 8px #fff;
     }
   }
