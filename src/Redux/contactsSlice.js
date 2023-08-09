@@ -13,6 +13,6 @@ const handlePending = state => {
 };
 
 const handleRejected = (state, action) => {
-  state.isLoading = true;
+  state.isLoading = false;
   state.error = action.payload;
 };
