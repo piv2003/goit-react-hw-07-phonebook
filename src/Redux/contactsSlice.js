@@ -6,3 +6,8 @@ const initialState = {
   isLoading: false,
   error: null,
 };
+
+const handlePending = state => {
+  state.isLoading = true;
+  state.error = null;
+};
