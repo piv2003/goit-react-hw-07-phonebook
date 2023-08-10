@@ -12,6 +12,8 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { RiDeleteBin2Line } from 'react-icons/ri';
 
+const ContactsListItem = ({ contact }) => {};
+
 ContactsListItem.propTypes = {
   contact: PropTypes.object.isRequired,
 };
