@@ -27,6 +27,23 @@ const ContactsListItem = ({ contact }) => {
       });
     }
   };
+  return (
+    <>
+      <UserIcon />
+      <ContactInfo>
+        <Name>{contact.name}</Name>
+        <Number>{contact.phone}</Number>
+      </ContactInfo>
+
+      {isLoading && contactId === contact.id ? (
+        <Spinner size={40} />
+      ) : (
+        <Button type="button" onClick={handleDelete} disabled={isLoading}>
+          <RiDeleteBin2Line size={25} />
+        </Button>
+      )}
+    </>
+  );
 };
 
 ContactsListItem.propTypes = {
