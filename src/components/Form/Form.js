@@ -8,11 +8,11 @@ import {
   Button,
   FormikWrapper,
 } from './Form.styled';
-class Form extends Component {
-  state = {
-    name: '',
-    number: '',
-  };
+
+const initialValues = {
+  name: '',
+  phone: '',
+}
 
   handleChange = evt => {
     const { name, value } = evt.currentTarget;
