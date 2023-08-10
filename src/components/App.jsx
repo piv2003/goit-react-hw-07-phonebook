@@ -29,6 +29,10 @@ export default function App() {
     );
   }
 
+  function checkСontact(newNumber) {
+    return contacts.some(contact => contact.phone === newNumber);
+  }
+
   function onSubmit(name, phone) {
     if (checkСontact(phone)) {
       return notifiesAlert(phone, name);
@@ -46,7 +50,7 @@ export default function App() {
 
       <h2>Contacts</h2>
 
-      {isLoading && !error && <b>Request in progress...</b>}
+      {isLoading && !error && <strong>Request in progress...</strong>}
 
       {error && <p>Something went wrong..</p>}
 
