@@ -14,18 +14,20 @@ const initialValues = {
   phone: '',
 }
 
-  handleChange = evt => {
-    const { name, value } = evt.currentTarget;
-    this.setState({
-      [name]: value,
-    });
-  };
-
-  handleSubmit = evt => {
-    evt.preventDefault();
-    this.props.onSubmit(this.state);
-    this.setState({ name: '', number: '' });
-  };
+const userSchema = object({
+  name: string()
+    .matches(
+      /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
+      "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan",
+    )
+    .required(),
+  phone: string()
+    .matches(
+      /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
+      'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +',
+    )
+    .required(),
+});
 
   render() {
     const { name, number } = this.state;
@@ -66,4 +68,4 @@ Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default Form;
+
