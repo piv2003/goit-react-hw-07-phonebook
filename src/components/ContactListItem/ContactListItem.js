@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { RiDeleteBin2Line } from 'react-icons/ri';
 import {
   Button,
   ContactInfo,
@@ -9,8 +11,8 @@ import {
   Spinner,
   UserIcon,
 } from './ContactListItem.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { RiDeleteBin2Line } from 'react-icons/ri';
+import { deleteContact } from '../../Redux/operations';
+import { selectError, selectIsLoading } from '../../Redux/selectors';
 
 const ContactsListItem = ({ contact }) => {
   const [contactId, setContactId] = useState(null);
