@@ -7,15 +7,15 @@ class Form extends Component {
     number: '',
   };
 
-  handleChange = e => {
-    const { name, value } = e.currentTarget;
+  handleChange = evt => {
+    const { name, value } = evt.currentTarget;
     this.setState({
       [name]: value,
     });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
+  handleSubmit = evt => {
+    evt.preventDefault();
     this.props.onSubmit(this.state);
     this.setState({ name: '', number: '' });
   };
