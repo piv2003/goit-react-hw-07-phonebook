@@ -1,6 +1,8 @@
-import PropTypes from 'prop-types';
-import ContactListItem from 'components/ContactListItem/ContactListItem';
-import { List } from './ContactsList.styled';
+import { useSelector } from 'react-redux';
+import ContactListItem from '../../components/ContactListItem/ContactListItem';
+import { Item, List, Wrapper } from './ContactsList.styled';
+import { selectContactByName, selectIsLoading } from '../../Redux/selectors';
+import Filter from '../Filter/Filter';
 
 const ContactsList = ({ contacts, filter, onDeleteContact }) => {
   return (
@@ -18,18 +20,6 @@ const ContactsList = ({ contacts, filter, onDeleteContact }) => {
         ))}
     </List>
   );
-};
-
-ContactsList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  filter: PropTypes.string.isRequired,
-  onDeleteContact: PropTypes.func.isRequired,
 };
 
 export default ContactsList;
