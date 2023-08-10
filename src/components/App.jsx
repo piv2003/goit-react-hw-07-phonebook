@@ -18,6 +18,10 @@ export default function App() {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   return (
     <AppBox>
       <ToastContainer autoClose={3000} position="top-center" />
