@@ -29,6 +29,15 @@ export default function App() {
     );
   }
 
+  function onSubmit(name, phone) {
+    if (checkСontact(phone)) {
+      return notifiesAlert(phone, name);
+    }
+    dispatch(addContact({ name, phone }));
+    toast.success(`Contact ${name} added successfully`, {
+      position: 'top-right',
+    });
+  }
   return (
     <AppBox>
       <ToastContainer autoClose={3000} position="top-center" />
