@@ -1,6 +1,13 @@
 import PropTypes from 'prop-types';
-import { Component } from 'react';
-import { FormBox, InputName, InputTel, Button } from './Form.styled';
+import { ErrorMessage } from 'formik';
+import { object, string } from 'yup';
+import {
+  FormBox,
+  InputName,
+  InputTel,
+  Button,
+  FormikWrapper,
+} from './Form.styled';
 class Form extends Component {
   state = {
     name: '',
