@@ -1,5 +1,7 @@
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { LabelFilter, InputFilter } from './Filter.styled';
+import { onChangeFilter } from '../../Redux/filterSlice';
+import { selectFilter } from '../../Redux/selectors';
 
 const Filter = ({ onChange, filter }) => {
   return (
@@ -13,11 +15,6 @@ const Filter = ({ onChange, filter }) => {
       />
     </LabelFilter>
   );
-};
-
-Filter.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  filter: PropTypes.string,
 };
 
 export default Filter;
