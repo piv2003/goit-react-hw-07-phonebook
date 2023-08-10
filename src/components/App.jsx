@@ -22,6 +22,13 @@ export default function App() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  function notifiesAlert(numberContact, nameContact) {
+    return toast.error(
+      `${numberContact} is already in contacts under the name ${nameContact}.`,
+      { position: 'top-right' }
+    );
+  }
+
   return (
     <AppBox>
       <ToastContainer autoClose={3000} position="top-center" />
