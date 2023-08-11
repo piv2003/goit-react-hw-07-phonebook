@@ -30,6 +30,11 @@ const userSchema = object({
 });
 
 export default function ContactForm({ onSubmit }) {
+  function handleSubmit({ name, phone }, { resetForm }) {
+    onSubmit(name, phone);
+    resetForm();
+  }
+
   <FormBox autoComplete="off">
     <label>
       <span>Name</span>
