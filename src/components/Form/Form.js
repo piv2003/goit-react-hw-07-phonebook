@@ -35,19 +35,27 @@ export default function ContactForm({ onSubmit }) {
     resetForm();
   }
 
-  <FormBox autoComplete="off">
-    <label>
-      <span>Name</span>
-      <InputName type="text" name="name" />
-      <ErrorMessage name="name" />
-    </label>
-    <label>
-      <span>Tel</span>
-      <InputTel type="tel" name="phone" />
-      <ErrorMessage name="phone" />
-    </label>
-    <Button type="submit">Add contact</Button>
-  </FormBox>;
+  return (
+    <FormikWrapper
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={userSchema}
+    >
+      <FormBox autoComplete="off">
+        <label>
+          <span>Name</span>
+          <InputName type="text" name="name" />
+          <ErrorMessage name="name" />
+        </label>
+        <label>
+          <span>Tel</span>
+          <InputTel type="tel" name="phone" />
+          <ErrorMessage name="phone" />
+        </label>
+        <Button type="submit">Add contact</Button>
+      </FormBox>
+    </FormikWrapper>
+  );
 }
 
 ContactForm.propTypes = {
