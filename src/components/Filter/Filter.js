@@ -7,6 +7,10 @@ const Filter = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
 
+  function handleInputChange(evt) {
+    dispatch(onChangeFilter(evt.target.value));
+  }
+
   return (
     <LabelFilter>
       <span>Find contacts by name</span>
