@@ -29,7 +29,21 @@ const userSchema = object({
     .required(),
 });
 
-export default function ContactForm({ onSubmit }) {}
+export default function ContactForm({ onSubmit }) {
+  <FormBox autoComplete="off">
+    <label>
+      <span>Name</span>
+      <InputName type="text" name="name" />
+      <ErrorMessage name="name" />
+    </label>
+    <label>
+      <span>Tel</span>
+      <InputTel type="tel" name="phone" />
+      <ErrorMessage name="phone" />
+    </label>
+    <Button type="submit">Add contact</Button>
+  </FormBox>;
+}
 
 ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
