@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { Form, Field, Formik } from 'formik';
+
+export const FormikWrapper = styled(Formik)``;
 
 export const FormBox = styled.form`
   margin-left: auto;
