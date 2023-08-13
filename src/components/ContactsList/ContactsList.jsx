@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import ContactItem from '../ContactListItem/ContactListItem';
-import { Item, List, Wrapper } from './ContactsList.styled';
+import { Item, List, Wrapper, Empty } from './ContactsList.styled';
 import { selectContactByName, selectIsLoading } from '../../Redux/selectors';
 import Filter from '../Filter/Filter';
 
@@ -10,20 +10,18 @@ const ContactsList = () => {
 
   return (
     <Wrapper>
-      {contacts.length > 0 && (
-        <>
-          <Filter />
-          <List>
-            {contacts.map(contact => (
-              <Item key={contact.id}>
-                <ContactItem contact={contact} />
-              </Item>
-            ))}
-          </List>
-        </>
+      <Filter />
+      {contacts.length > 0 ? (
+        <List>
+          {contacts.map(contact => (
+            <Item key={contact.id}>
+              <ContactItem contact={contact} />
+            </Item>
+          ))}
+        </List>
+      ) : (
+        <Empty>{isLoading ? 'Loading...' : 'Contacts list is empty'}</Empty>
       )}
-
-      {!isLoading && contacts.length === 0 && <p>Contacts list is empty</p>}
     </Wrapper>
   );
 };
