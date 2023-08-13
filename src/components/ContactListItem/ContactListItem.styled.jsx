@@ -30,17 +30,11 @@ export const ContactInfo = styled.div`
   display: flex;
   gap: 5px;
   flex-direction: column;
-  margin-right: auto;
-  margin-left: auto;
 `;
 export const Button = styled.button`
-  margin-left: auto;
   padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 10px 10px,
-    rgba(0, 0, 0, 0.12) 0px -7px 5px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 7px 5px, rgba(0, 0, 0, 0.09) 0px -3px 2px;
+  border-color: #000000;
+  border-radius: 50%;
 
   &:hover {
     border-color: red;
@@ -54,14 +48,13 @@ export const Button = styled.button`
     fill: #000000;
   }
 `;
-
 export const Name = styled.span`
-  color: #c7fc37;
+  color: #eafd93;
   font-weight: 500;
+  text-shadow: 1px 1px #000;
 `;
-
 export const Number = styled.span`
-  color: #9c05f3;
-  font-weight: bold;
-  text-shadow: 0 1px 0 #cccccc;
+  color: #bb88f5;
+  font-weight: 500;
+  text-shadow: 1px 1px #000;
 `;
