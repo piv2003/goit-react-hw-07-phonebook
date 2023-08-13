@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import { ErrorMessage } from 'formik';
 import { object, string } from 'yup';
+import PropTypes from 'prop-types';
 import {
   FormBox,
   InputName,
