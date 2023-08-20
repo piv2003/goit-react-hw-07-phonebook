@@ -24,7 +24,6 @@ export const Item = styled.li`
   border-radius: 50px;
 
   color: #fff;
-  /* background: rgb(223, 225, 235); */
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
